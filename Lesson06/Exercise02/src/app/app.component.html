@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row" style="margin-top: 30px">
+      <div class="col-md-3 col-xs-6" *ngFor="let car of cars">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">{{ car.make }}</h5>
+                  <h6 class="card-subtitle">{{ car.model }}</h6>
+                  <p class="card-text">{{ car.year }}</p>
+                  <img src="../assets/{{car.image_url}}" class="img-thumbnail" alt="Toyota Cars">
+                  <!-- <img src="https//{{car.image_url}}"> -->
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

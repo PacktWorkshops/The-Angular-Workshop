@@ -1,0 +1,8 @@
+
+  <div class="card-body">
+      <button   class="btn btn-primary" (click)="sendToChild('Hello Child !')">Say Hello to Child</button>
+      Response from child : <b>"{{ receivedChildMessage }}"</b>
+  </div>
+  <hr>
+
+<app-child [receivedParentMessage]="messageToSendP" (messageToEmit)="getMessage($event)"></app-child>
