@@ -1,0 +1,40 @@
+
+    <mat-toolbar color="primary">
+        <div *ngIf="(profile.state$ | async).profile_data; let profile_details; else refresh" class="card-title">
+            {{profile_details.prefeered_location}}</div>
+          <ng-template #refresh>------- ------</ng-template>
+    </mat-toolbar>
+
+    <div class="card-image profile-large">
+      <img src="https://cdn.onlinewebfonts.com/svg/img_191958.png" style="margin: 30px" height="100" width="100"
+        alt="sample" class="responsive-img profile-post-image">
+    </div>
+    <div *ngIf="(profile.state$ | async).profile_data; let profile_details; else refresh" class="card-title">
+      {{profile_details.first_name}}  {{profile_details.last_name}}</div>
+    <ng-template #refresh>------- ------</ng-template>
+
+
+    <div class="example-container">
+      <div>
+        <mat-form-field>
+          <input #firstName matInput placeholder="First name">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input #lastName matInput placeholder="Last name">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-select #pLocationName placeholder="Preferred Train Station">
+            <mat-option value="Lagos, Nigeria">Lagos, Nigeria</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <button
+      (click)="profile.updateUser(firstName.value, lastName.value, pLocationName.value, true); firstName.value = ''; lastName.value = ''; pLocationName.value = ''"
+      mat-raised-button color="accent">Submit</button>

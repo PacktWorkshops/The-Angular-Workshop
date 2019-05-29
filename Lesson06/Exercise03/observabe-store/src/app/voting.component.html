@@ -1,0 +1,11 @@
+
+<input class="form-control" #nomineeName type="text" placeholder="nominee's name">
+<button class="btn-primary btn" (click)="store.addNominee(nomineeName.value); nomineeName.value = ''">Add nominee</button>
+
+<h2>Nominees</h2>
+<ul>
+  <li *ngFor="let nominee of (store.state$ | async).nominees" style="margin-bottom:5px">
+    <span>{{ nominee.name }}</span>
+    <button (click)="store.addVote(nominee)" type="button" class="btn btn-sm btn-primary">Votes:  <span class="badge"> {{ nominee.votes }} +</span></button>
+  </li>
+</ul>
