@@ -1,0 +1,27 @@
+{
+  "name": "@ata/asset-build",
+  "version": "1.0.0",
+  "description": "Builder for copying assets in Angular CLI",
+  "main": "src/public_api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "builder",
+    "cli",
+    "angular",
+    "asset",
+    "copy"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@angular-devkit/architect": "^0.800.1",
+    "@angular-devkit/core": "^8.0.1",
+    "@types/json-schema": "^7.0.3",
+    "@types/node": "^11.13.13",
+    "glob": "^7.1.4",
+    "typescript": "^3.5.1"
+  },
+  "builders": "builders.json"
+}

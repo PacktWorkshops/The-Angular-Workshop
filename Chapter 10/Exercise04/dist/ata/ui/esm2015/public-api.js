@@ -1,0 +1,9 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/*
+ * Public API Surface of ui
+ */
+export { ProfileState, ProfileStore, ProfileComponent, ProfileModule } from './lib/profile/public_api';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0BhdGEvdWkvIiwic291cmNlcyI6WyJwdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFJQSxPQUFPLEVBQUUsWUFBWSxFQUFFLFlBQVksRUFBRSxnQkFBZ0IsRUFBRSxhQUFhLEVBQUUsTUFBTSwwQkFBMEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2YgdWlcbiAqL1xuXG5leHBvcnQgeyBQcm9maWxlU3RhdGUsIFByb2ZpbGVTdG9yZSwgUHJvZmlsZUNvbXBvbmVudCwgUHJvZmlsZU1vZHVsZSB9IGZyb20gJy4vbGliL3Byb2ZpbGUvcHVibGljX2FwaSc7XG4iXX0=
