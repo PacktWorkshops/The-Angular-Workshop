@@ -1,0 +1,12 @@
+{
+    "$schema": "@angular-devkit/architect/src/builders-schema.json",
+    "builders": {
+      "assets": {
+        "implementation": "./src/public_api",
+        "class": "./src/public_api",
+        "schema": "./src/schema.json",
+        "description": "Post processing for the @ata/ui library"
+      }
+    }
+  }
+  

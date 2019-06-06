@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "ATA Assets Builder.",
+    "description": "ATA Assets Builder schema for Architect.",
+    "type": "object",
+    "properties": {
+      "files": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "description": "Array of file globs and output destinations."
+        }
+      }
+    }
+  }
+  

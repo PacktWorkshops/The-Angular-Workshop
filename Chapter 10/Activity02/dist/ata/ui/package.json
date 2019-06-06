@@ -1,0 +1,22 @@
+{
+  "name": "@ata/ui",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0",
+    "rxjs": "^6.5.2"
+  },
+  "main": "bundles/ata-ui.umd.js",
+  "module": "fesm5/ata-ui.js",
+  "es2015": "fesm2015/ata-ui.js",
+  "esm5": "esm5/ata-ui.js",
+  "esm2015": "esm2015/ata-ui.js",
+  "fesm5": "fesm5/ata-ui.js",
+  "fesm2015": "fesm2015/ata-ui.js",
+  "typings": "ata-ui.d.ts",
+  "metadata": "ata-ui.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
