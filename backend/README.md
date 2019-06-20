@@ -8,10 +8,11 @@
 
 3. Initialize the database (skip if you want to use the static JSON provided)
 
-If you want to start fresh, you may need to run generate twice. 
+If you want to start fresh. 
 
 The first time will initialize the DB.
-The second run will propulate the DB.
+The second run will populate the DB.
+
 
 ```
 npm run reset
