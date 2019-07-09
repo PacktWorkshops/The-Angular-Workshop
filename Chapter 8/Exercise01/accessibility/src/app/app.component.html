@@ -1,0 +1,13 @@
+<div class="form-group" style="width: 60%; margin:0 auto;">
+	<input class="form-control" placeholder="Search..." (keyup)="onKeydown($event)" #input>
+</div>
+
+<section class="list-group" style="width: 60%; margin:0 auto;">
+	<app-list-item *ngFor="let country of countries | filter: 'name' : input.value; index as index" 
+  
+    [item]="country" class="list-group-item">
+		{{country.name}}
+	</app-list-item>
+</section>
+
+<p style="margin-top: 1em" *ngIf="model">Model: {{model}}</p>
