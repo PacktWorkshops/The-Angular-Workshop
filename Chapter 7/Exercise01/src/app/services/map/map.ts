@@ -2,7 +2,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { TrainMapStore, TrainMapActions } from './map.store';
+import { TrainMapStore, TrainMapActions, TrainMapAction, TrainMapRequest } from './map.store';
 import { TrainMapService } from './map.service';
 
 @Injectable()
@@ -13,15 +13,16 @@ export class TrainMap implements OnDestroy {
     constructor(public store: TrainMapStore,
                 public service: TrainMapService) {}
 
-    fetch() {
-        this.service.fetchMap()
+    fetch(body: TrainMapRequest) {
+        return this.service.fetchMap()
         .pipe(takeUntil(this._destroy))
         .subscribe((res) => {
             this.store.actions.emit({ type: TrainMapActions.REPLACE, payload: res });
+            this.store.actions.emit({ type: TrainMapActions.SELECT, request: body });
         });
     }
 
-    getState() {
+    state() {
        return this.store.state$;
     }
 

@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 export interface AbstractAction {
   type: string;
   payload?: any;
+  request?: any;
 }
 
 export interface AbstractState {
@@ -29,7 +30,7 @@ export class Store implements OnDestroy {
         return this._state$.getValue();
     }
 
-    setState (nextState: AbstractState): void {
+    setState(nextState: AbstractState): void {
         this.next(nextState);
     }
 

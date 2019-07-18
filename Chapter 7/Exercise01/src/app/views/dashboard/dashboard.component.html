@@ -1,14 +1,15 @@
-<p>dashboard works!</p>
-<ul>
-    <li *ngFor="let map of (controller.getState() | async).maps">
-        {{map.name}} | {{map.direction}}
-        <ul>
-            <li *ngFor="let stop of map.items">
-               <ul>
-                    <li>{{stop.location}}</li>
-                    <li>{{stop.distance}}</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ul>
+<div class="headline">{{(controller.state() | async).selected.name}} | {{(controller.state() | async).selected.direction}}</div>
+<div class="map" *ngIf="(controller.state() | async).selected">
+
+    <div class="background"></div>
+    <div class="trip"></div>
+    <div class="line">
+        <div class="stop" *ngFor="let stop of (controller.state() | async).selected.items">
+            <div class="icon"></div>
+            <ul>
+                <li>{{stop.location}}</li>
+                <li>{{stop.distance}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

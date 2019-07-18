@@ -11,7 +11,10 @@ export class DashboardComponent implements OnInit {
   constructor(public controller: TrainMap) { }
 
   ngOnInit() {
-    this.controller.fetch();
+    this.controller.fetch({
+      name: 'Green Line',
+      direction: 'west'
+    });
   }
 
 }
