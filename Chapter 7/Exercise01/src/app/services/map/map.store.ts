@@ -10,8 +10,7 @@ export enum TrainMapActions {
 }
 
 export interface TrainMapRequest {
-    name: string;
-    direction: string;
+    id: number;
 }
 
 export interface TrainMapAction {
@@ -44,8 +43,7 @@ export class TrainMapStore extends Store {
         };
         case TrainMapActions.SELECT:
           const response = state.maps.filter((map) => {
-            return map.name === action.request.name &&
-                   map.direction === action.request.direction;
+            return map.id === action.request.id;
           });
           return {
             ...state,

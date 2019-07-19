@@ -24,35 +24,35 @@ const stops = [
     },
     {
         location: "Pioneer Square",
-        distance: 7.0
-    },
-    {
-        location: "Hamilton Way",
-        distance: 7.25
-    },
-    {
-        location: "Science Center",
-        distance: 7.5
-    },
-    {
-        location: "Osage Ave.",
-        distance: 8.0
-    },
-    {
-        location: "Fiji Way",
-        distance: 9.0
-    },
-    {
-        location: "Columbia Cirle",
         distance: 10.0
     },
     {
-        location: "Division St.",
+        location: "Hamilton Way",
         distance: 12.0
     },
     {
-        location: "College St.",
+        location: "Science Center",
         distance: 13.0
+    },
+    {
+        location: "Osage Ave.",
+        distance: 14.0
+    },
+    {
+        location: "Fiji Way",
+        distance: 14.5
+    },
+    {
+        location: "Columbia Cirle",
+        distance: 15.0
+    },
+    {
+        location: "Division St.",
+        distance: 16.0
+    },
+    {
+        location: "College St.",
+        distance: 18.0
     },
     {
         location: "Epic Ave.",
@@ -63,10 +63,11 @@ const stops = [
 class greenLine {
     constructor() {
         return {   
-            name: 'Green Line',
+            name: 'Green',
+            id: 1,
             length: 20.0,
             capacity: 1200,
-            direction: 'west',
+            direction: 'West',
             items: stops.map((stop) => {
                 return {...stop, id: cuid()};
             })
@@ -77,10 +78,11 @@ class greenLine {
 class greenLineWest {
     constructor() {
         return {   
-            name: 'Green Line',
+            name: 'Green',
+            id: 0,
             length: 20.0,
             capacity: 1200,
-            direction: 'east',
+            direction: 'East',
             items: stops.reverse().map((stop) => {
                 return {...stop, id: cuid()};
             })

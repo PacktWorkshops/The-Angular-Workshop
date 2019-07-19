@@ -13,7 +13,7 @@ export class TrainMap implements OnDestroy {
     constructor(public store: TrainMapStore,
                 public service: TrainMapService) {}
 
-    fetch(body: TrainMapRequest) {
+    select(body: TrainMapRequest) {
         return this.service.fetchMap()
         .pipe(takeUntil(this._destroy))
         .subscribe((res) => {

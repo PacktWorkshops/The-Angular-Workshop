@@ -28,8 +28,8 @@ class Map {
     init(cb) {
         const maps = getMapCollection();
      
-        lines.forEach((line) => {
-            maps.insert({ ...line, id: cuid() });
+        lines.forEach((line, index) => {
+            maps.insert({ ...line, id: index });
         });
       
         mapDB.saveDatabase(()=>{

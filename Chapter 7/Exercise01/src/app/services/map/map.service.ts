@@ -9,6 +9,7 @@ export interface TrainStop {
 }
 
 export interface TrainMap {
+  id: number;
   name: string;
   length: number;
   capacity: number;

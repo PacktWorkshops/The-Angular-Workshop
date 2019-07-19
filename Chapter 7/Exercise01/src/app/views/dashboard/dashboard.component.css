@@ -1,45 +1,9 @@
-
-ul {
-    list-style: none;
+ata-map {
+    width: calc(100% - 64px);
 }
 
-.map {
-    position: relative;
-}
-
-.line {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+.map-select {
     position: absolute;
-    top: 0px;
-    transform: translateY(-4px);
-}
-
-.background {
-    width: 100%;
-    height: 12px;
-    background: green;
-    position: absolute;
-    top: 0px;
-    border-radius: 12px;
-}
-
-.trip {
-    width: 50%;
-    height: 12px;
-    background: red;
-    position: absolute;
-    top: 0px;
-    border-radius: 12px;
-}
-
-.stop .icon {
-    border: 4px solid black;
-    background: #ffffff;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+    top: 24px;
+    right: 36px;
 }

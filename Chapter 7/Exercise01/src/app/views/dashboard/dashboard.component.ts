@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TrainMap } from 'src/app/services/map/map';
 
 @Component({
@@ -8,12 +8,20 @@ import { TrainMap } from 'src/app/services/map/map';
 })
 export class DashboardComponent implements OnInit {
 
+  @ViewChild('mapSelect', {static: false}) mapSelect: ElementRef;
+
   constructor(public controller: TrainMap) { }
 
   ngOnInit() {
-    this.controller.fetch({
-      name: 'Green Line',
-      direction: 'west'
+    this.controller.select({
+      id: 0
+    });
+  }
+
+  onMapSelect(ev: Event) {
+    const selected = this.mapSelect.nativeElement.selectedOptions[0];
+    this.controller.select({
+      id: parseInt(selected.getAttribute('value'), 10)
     });
   }
 
