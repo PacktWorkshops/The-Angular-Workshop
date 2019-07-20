@@ -1,7 +1,7 @@
 const cuid = require('cuid');
 
 
-const stops = [
+const blueStops = [
     {
         location: "Apollo Ave",
         distance: 0.0
@@ -60,30 +60,100 @@ const stops = [
     }
 ];
 
-class greenLine {
+
+const redStops = [
+    {
+        location: "Tibbets Ave.",
+        distance: 0.0
+    },
+    {
+        location: "Wolf Rd.",
+        distance: 1.0
+    },
+    {
+        location: "La Cienaga Blvd.",
+        distance: 2.5
+    },
+    {
+        location: "Orbital Ave.",
+        distance: 4.0
+    }, 
+    {
+        location: "Main St.",
+        distance: 7.5
+    },
+    {
+        location: "Pioneer Square",
+        distance: 10.0
+    },
+    {
+        location: "Charles Pl.",
+        distance: 11.0
+    },
+    {
+        location: "River Rd.",
+        distance: 12.5
+    },
+    {
+        location: "Timonium Ave.",
+        distance: 13.25
+    },
+    {
+        location: "Martin Luther King Blvd.",
+        distance: 14.5
+    },
+    {
+        location: "Tacoma Pl.",
+        distance: 17.0
+    },
+    {
+        location: "Hamilton Way",
+        distance: 18.5
+    },
+    {
+        location: "Hawking Blvd.",
+        distance: 20.0
+    },
+    {
+        location: "Stadium Way",
+        distance: 22.5
+    },
+    {
+        location: "Forest Park",
+        distance: 25.5
+    },
+    {
+        location: "Dewey St.",
+        distance: 32.0
+    }
+];
+
+
+
+class blueLine {
     constructor() {
         return {   
-            name: 'Green',
+            name: 'Blue',
             id: 1,
-            length: 20.0,
+            length: blueStops[blueStops.length - 1].distance,
             capacity: 1200,
-            direction: 'West',
-            items: stops.map((stop) => {
+            direction: 'East/West',
+            items: blueStops.map((stop) => {
                 return {...stop, id: cuid()};
             })
         }
     }
 }
 
-class greenLineWest {
+class redLine {
     constructor() {
         return {   
-            name: 'Green',
-            id: 0,
-            length: 20.0,
-            capacity: 1200,
-            direction: 'East',
-            items: stops.reverse().map((stop) => {
+            name: 'Red',
+            id: 1,
+            length: redStops[redStops.length - 1].distance,
+            capacity: 1600,
+            direction: 'North/South',
+            items: redStops.map((stop) => {
                 return {...stop, id: cuid()};
             })
         }
@@ -91,5 +161,5 @@ class greenLineWest {
 }
 
 
-const lines = [new greenLine(), new greenLineWest()];
+const lines = [new blueLine(), new redLine()];
 module.exports = lines;

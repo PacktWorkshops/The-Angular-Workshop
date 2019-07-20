@@ -39,10 +39,17 @@ ul {
 .background {
     width: 100%;
     height: 18px;
-    background: green;
     position: absolute;
     bottom: 0px;
     border-radius: 14px;
+}
+
+.background.blue {
+    background: #0996d7;
+}
+
+.background.red {
+    background: #c3002f;
 }
 
 .trip {
