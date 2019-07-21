@@ -1,0 +1,5 @@
+<h1>Plan a trip at {{ hour | date: 'shortTime' }}</h1>
+
+<ul *ngIf="stations">
+  <li *ngFor="let station of stations">{{ station }}</li>
+</ul>
