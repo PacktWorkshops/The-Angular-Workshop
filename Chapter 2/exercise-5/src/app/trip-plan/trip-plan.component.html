@@ -1,0 +1,9 @@
+<h1>Plan a trip at {{ hour | date: 'shortTime' }}</h1>
+
+<ul *ngIf="stations">
+  <li *ngFor="let station of stations">{{ station }}</li>
+</ul>
+
+<p>{{ stations[0] | tripStep : tripStep.Departure }}</p>
+<p>{{ stations[1] | tripStep: tripStep.Arrive }}</p>
+<p>{{ stations[2] | tripStep: tripStep.Transfer }}</p>
