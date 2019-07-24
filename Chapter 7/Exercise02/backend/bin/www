@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+
+const http = require('http');
+const app = require('../app');
+const api = require('../api');
+const appPort = process.env.PORT || '4200';
+const apiPort = process.env.API_PORT || '4300';
+const env = process.argv.includes('--prod') ? 'prod' : 'dev';
+
+function onError(error) {
+    throw error;
+}
+
+function onListening() {
+    process.stdout.write(`${(env === 'prod') ? 'Production' : 'Development'} server listening on ${ appPort }\n`);
+}
+
+if (env === 'prod') {
+
+    const appServer = http.createServer(app);
+
+    app.set('port', appPort);
+
+    appServer.listen(appPort);
+    appServer.on('error', onError);
+    appServer.on('listening', onListening);
+
+}
+
+const apiServer = http.createServer(api);
+
+api.set('port', apiPort);
+
+
+apiServer.listen(apiPort);
+apiServer.on('error', onApiError);
+apiServer.on('listening', onApiListening);
+
+
+function onApiError(error) {
+    throw error;
+}
+
+function onApiListening() {
+    process.stdout.write(`${(env === 'prod') ? 'Production' : 'Development'} REST API listening on ${ apiPort }\n`);
+}
