@@ -1,9 +1,0 @@
-ata-map {
-    width: calc(100% - 64px);
-}
-
-.map-select {
-    position: absolute;
-    top: 24px;
-    right: 36px;
-}
