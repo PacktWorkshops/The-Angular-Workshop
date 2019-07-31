@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   user = new User();
   loginForm: FormGroup;
   loggedIn: boolean;
+  loginMessage: string;
   submitted = false;
 
   constructor(private formBuilder: FormBuilder, private loginService: LoginService) { }
@@ -30,6 +31,10 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    this.loggedIn = this.loginService.login(this.loginForm.value);
+    this.loginService.login(this.loginForm.value).subscribe(
+      (data) => {
+        this.loggedIn = !!data;
+      }
+    );
   }
 }
