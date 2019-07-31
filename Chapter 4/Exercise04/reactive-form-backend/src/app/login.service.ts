@@ -2,8 +2,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { User } from './user';
+import { LoginResponse } from './login-response';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +19,13 @@ export class LoginService {
 
   constructor(private httpClient: HttpClient) { }
 
-  login(user: User): Observable<any> {
+  login(user: User): Observable<LoginResponse | boolean> {
     const body = {
       username: user.name,
       password: user.password
     };
 
-    return this.httpClient.post('api/auth/login', body, this.httpOptions)
+    return this.httpClient.post<LoginResponse>('api/auth/login', body, this.httpOptions)
       .pipe(
         catchError(this.handleError())
       );
