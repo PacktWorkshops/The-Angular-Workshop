@@ -1,9 +1,9 @@
 <h2>Login Form</h2>
 <div>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div>
       <div><input type="text" name="name" formControlName="name" placeholder="user name."></div>
-      <div><input type="password" placeholder="password" formControlName="password" name="password"/></div>
+      <div><input type="password" name="password" placeholder="password" formControlName="password"/></div>
       <button type="submit">login</button>
       <div *ngIf="submitted && loggedIn">Your logged in</div>
       <div *ngIf="submitted && !loggedIn">Sorry, we could not login you in</div>
