@@ -31,6 +31,11 @@ export class LoginService {
       );
   }
 
+  duplicateCheck(name: string): Observable<boolean> {
+    const isDuplicate = name === 'dev';
+    return of(isDuplicate);
+  }
+
   private handleError(operation = 'operation', result?) {
     return (error: HttpErrorResponse) => {
       if (error.status === 401) {
