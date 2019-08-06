@@ -1,0 +1,29 @@
+{
+  "name": "ata-node",
+  "version": "1.0.0",
+  "description": "backend node server for ata application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reset": "node reset",
+    "generate": "node init",
+    "serve": "node ./bin/www",
+    "watch": "nodemon ./bin/www --ignore 'db/*.json'",
+    "prod": "node ./bin/www --prod"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.3.3",
+    "cookie-parser": "^1.4.4",
+    "cuid": "^2.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "http": "^0.0.0",
+    "lokijs": "^1.5.6",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
+}

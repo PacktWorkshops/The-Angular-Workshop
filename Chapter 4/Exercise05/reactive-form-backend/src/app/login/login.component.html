@@ -1,0 +1,41 @@
+<h2>Login Form</h2>
+<div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+    <div>
+      <div>
+        <input type="text" name="name" formControlName="name" placeholder="user name.">
+        <label
+          *ngIf="loginForm.controls['name'].hasError('required') && (loginForm.controls['name'].touched)">Name is required
+        </label>
+        <label
+          *ngIf="loginForm.controls['name'].hasError('email') && (loginForm.controls['name'].touched)">A valid email is required
+        </label>
+      </div>
+      <div>
+        <input type="password" name="password" placeholder="password" formControlName="password"/>
+        <label *ngIf="loginForm.controls['password'].hasError('required') && (loginForm.controls['password'].touched)">Password
+          is required
+        </label>
+        <label *ngIf="loginForm.controls['password'].hasError('invalidWord') && (loginForm.controls['password'].touched)">You cannot
+          use this word as a password
+        </label>
+      </div>
+      <button type="submit" [disabled]="loginForm.invalid">login</button>
+      <div *ngIf="submitted && loggedIn">Your logged in</div>
+      <div *ngIf="submitted && !loggedIn">Sorry, we could not login you in</div>
+    </div>
+  </form>
+</div>
+<h2>Sign Up Form</h2>
+<div>
+  <form [formGroup]="signUpForm">
+      <div>
+        <input type="text" name="name" formControlName="name" placeholder="user name">
+        <label *ngIf="signUpForm.controls['name'].hasError('required') && (signUpForm.controls['name'].touched)">Name is
+          required
+        </label>
+        <label *ngIf="signUpForm.controls['name'].hasError('nameTaken')">This name is already being used
+        </label>
+      </div>
+  </form>
+</div>
