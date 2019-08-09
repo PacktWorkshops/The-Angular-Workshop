@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TrainMap } from '../train-map/train-map';
 
 @Component({
@@ -7,20 +7,16 @@ import { TrainMap } from '../train-map/train-map';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  @ViewChild('mapSelect', {static: false}) mapSelect: ElementRef;
+  
 
   constructor(public facade: TrainMap) { }
 
   ngOnInit() {
-    this.facade.select({ id: 0 });
+    this.facade.select({ id: 1 });
   }
 
-  onMapSelect(ev: Event) {
-    const selected = this.mapSelect.nativeElement.selectedOptions[0];
-    this.facade.select({
-      id: parseInt(selected.getAttribute('value'), 10)
-    });
+  get state() {
+    return this.facade.state();
   }
 
 }

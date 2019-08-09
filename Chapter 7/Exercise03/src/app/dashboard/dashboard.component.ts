@@ -7,11 +7,16 @@ import { TrainMap } from '../train-map/train-map';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  
 
   constructor(public facade: TrainMap) { }
 
   ngOnInit() {
-    this.facade.select({ id: 0 });
+    this.facade.select();
+  }
+
+  get state() {
+    return this.facade.state();
   }
 
 }

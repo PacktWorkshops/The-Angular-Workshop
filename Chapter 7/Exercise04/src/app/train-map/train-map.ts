@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
-import { TrainMapService } from './train-map.service';
-import { TrainMapStore, TrainMapActions, ITrainMapSelection } from './train-map.store';
+import { TrainMapApiService } from './train-map-api.service';
+import { TrainMapStore, TrainMapActions, TrainMapState, ITrainMapSelection } from './train-map.store';
+import { Observable } from 'rxjs';
 import { ITrainMap } from './train-map.interface';
+import { map, concatMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TrainMap {
-  constructor(public store: TrainMapStore,
-              public api: TrainMapService) { }
-
-  select(selection: ITrainMapSelection) {
-    return this.api.fetchMap()
-    .subscribe((res: ITrainMap[]) => {
+  constructor(private api: TrainMapApiService,
+              private store: TrainMapStore) { }
+  select(selection: ITrainMapSelection): void {
+    this.api.fetchMaps().subscribe((res: ITrainMap[]) => {
       this.store.actions.emit({ type: TrainMapActions.REPLACE, payload: res });
-      this.store.actions.emit({ type: TrainMapActions.SELECT, request: selection });
+      this.store.actions.emit({ type: TrainMapActions.SELECT, select: selection });
     });
   }
-
-  state() {
+  state(): Observable<TrainMapState> {
     return this.store.state$;
   }
 

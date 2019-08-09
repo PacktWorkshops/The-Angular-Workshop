@@ -139,7 +139,11 @@ class blueLine {
             capacity: 1200,
             direction: 'East/West',
             items: blueStops.map((stop) => {
-                return {...stop, id: cuid()};
+                return {
+                        ...stop, 
+                        id: cuid(), 
+                        tripCompletion:((stop.distance / blueStops[blueStops.length - 1].distance) * 100) 
+                       };
             })
         }
     }
@@ -154,7 +158,11 @@ class redLine {
             capacity: 1600,
             direction: 'North/South',
             items: redStops.map((stop) => {
-                return {...stop, id: cuid()};
+                return {
+                        ...stop, 
+                        id: cuid(),
+                        tripCompletion: ((stop.distance / redStops[redStops.length - 1].distance) * 100)
+                       };
             })
         }
     }

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { TrainMapService } from './train-map.service';
+import { TrainMapApiService } from './train-map-api.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TrainMap {
-  constructor(public api: TrainMapService) { }
-  select() {
-    return this.api.fetchMap().subscribe();
+  constructor(private api: TrainMapApiService) { }
+  select(): void {
+    this.api.fetchMaps().subscribe();
   }
 }

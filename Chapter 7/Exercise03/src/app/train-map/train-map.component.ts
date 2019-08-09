@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ITrainMap } from './train-map.interface';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-train-map',
@@ -7,8 +6,6 @@ import { ITrainMap } from './train-map.interface';
   styleUrls: ['./train-map.component.css']
 })
 export class TrainMapComponent implements OnInit {
-
-  @Input('map') map: ITrainMap;
 
   constructor() { }
 

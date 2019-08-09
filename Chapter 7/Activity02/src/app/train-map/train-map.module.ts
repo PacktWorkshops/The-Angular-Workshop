@@ -6,7 +6,6 @@ import { TrainMapComponent } from './train-map.component';
   declarations: [TrainMapComponent],
   imports: [
     CommonModule
-  ],
-  exports: [TrainMapComponent]
+  ]
 })
 export class TrainMapModule { }

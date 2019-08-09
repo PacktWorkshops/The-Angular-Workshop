@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
   constructor(public facade: TrainMap) { }
 
   ngOnInit() {
-    this.facade.select({ id: 0 });
+    this.facade.select();
   }
 
 }

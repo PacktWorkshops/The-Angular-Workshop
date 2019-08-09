@@ -1,11 +1,3 @@
-<select class="map-select"
-        #mapSelect
-        (change)="onMapSelect($event)">
-    <option *ngFor="let map of (facade.state() | async).maps"
-            [selected]="(facade.state() | async).selected.id === map.id"
-            [value]="map.id" >
-        {{map.name}} Line {{map.direction}}
-    </option>
-</select>
-
-<app-train-map [map]="(facade.state() | async).selected"></app-train-map>
+<ng-container *ngIf="(state | async).selected">
+    <h1>{{(state | async).selected.name}}</h1>
+</ng-container>

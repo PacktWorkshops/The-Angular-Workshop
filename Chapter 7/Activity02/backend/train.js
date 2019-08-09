@@ -68,7 +68,7 @@ class Train {
         })).then(()=> {
             const trains = getTrainCollection();
             const lines = trains.chain().data();
-            console.log('Green Line train schedules created'.green);
+            console.log('Train schedules created'.green);
             cb(lines);
         })
 
