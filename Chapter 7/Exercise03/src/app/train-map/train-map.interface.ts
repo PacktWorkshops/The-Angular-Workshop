@@ -6,7 +6,7 @@ export interface ITrainStop {
 }
 
 export interface ITrainMap {
-    id: number;
+    id: string;
     name: string;
     length: number;
     capacity: number;

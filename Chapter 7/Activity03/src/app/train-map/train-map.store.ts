@@ -5,7 +5,7 @@ import { Subscription, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface ITrainMapSelection {
-  id: number;
+  id: string;
 }
 
 export interface ITrainMapAction {

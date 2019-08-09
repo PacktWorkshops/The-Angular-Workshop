@@ -29,7 +29,7 @@ class Map {
         const maps = getMapCollection();
      
         lines.forEach((line, index) => {
-            maps.insert({ ...line, id: index });
+            maps.insert({ ...line, id: index.toString() });
         });
       
         mapDB.saveDatabase(()=>{

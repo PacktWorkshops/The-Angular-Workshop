@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
   constructor(public facade: TrainMap) { }
 
   ngOnInit() {
-    this.facade.select({ id: 1 });
+    this.facade.select({ id: '1' });
   }
 
   get state() {
@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   onMapSelect(ev) {
     const selected = ev.target.value;
     this.facade.select({
-      id: parseInt(selected[0], 10)
+      id: selected[0]
     });
   }
 
