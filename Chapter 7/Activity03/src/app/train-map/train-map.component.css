@@ -1,0 +1,99 @@
+:host {
+    display: block;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+ul {
+    list-style: none;
+}
+
+.headline {
+    font-family: Helvetica;
+    font-size: 48px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000; 
+}
+
+.map {
+    position: relative;
+    height: 132px;
+}
+
+.line {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: absolute;
+    top: 0px;
+    transform: translateY(0px);
+}
+
+
+.background {
+    width: 100%;
+    height: 18px;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 14px;
+}
+
+.background.blue {
+    background: #0996d7;
+}
+
+.background.red {
+    background: #c3002f;
+}
+
+.trip {
+    width: 50%;
+    height: 18px;
+    background: red;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 14px;
+}
+
+.stop {
+    position: absolute;
+    height: 100%;
+}
+
+.stop .meta {
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+    padding-inline-start: 0px;
+    transform: translateX(-14px) translateY(24px) rotateZ(-60deg);
+}
+
+
+.stop .meta li {
+    width: 150px;
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #3d3d3d;
+}
+
+
+.stop .icon {
+    position: absolute;
+    bottom: 0px;
+    transform: translateY(3px);
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border: 6px solid black;
+    border-radius: 50%; 
+}

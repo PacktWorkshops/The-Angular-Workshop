@@ -1,0 +1,16 @@
+<ng-container *ngIf="map">
+    <div class="headline">{{map.name}} Line {{map.direction}}</div>
+    <div class="map">
+            <div class="background" [ngClass]="[map.name.toLowerCase()]"></div>
+            <div class="line">
+                    <div class="stop" 
+                            *ngFor="let stop of map.items"
+                            [ngStyle]="{ 'left': getPosition(stop) }">
+                            <ul class="meta">
+                            <li>{{stop.location}}</li>
+                            </ul>
+                            <div class="icon"></div>
+                    </div>
+            </div>
+    </div>
+</ng-container>
