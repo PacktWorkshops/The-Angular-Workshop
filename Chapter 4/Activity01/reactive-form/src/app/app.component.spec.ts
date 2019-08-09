@@ -1,20 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        LoginComponent
+        SignupComponent
       ],
       imports: [
-        ReactiveFormsModule,
-        HttpClientModule
-      ],
+        ReactiveFormsModule
+      ]
     }).compileComponents();
   }));
 

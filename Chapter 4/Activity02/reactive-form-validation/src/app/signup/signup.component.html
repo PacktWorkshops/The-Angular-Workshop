@@ -1,0 +1,42 @@
+<h2>SignUp Form</h2>
+<div>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)">
+    <div>
+      <div>
+        <input type="text" name="firstname" formControlName="firstName" placeholder="first name">
+        <label
+          *ngIf="signupForm.controls['firstName'].hasError('required') && (signupForm.controls['firstName'].touched)">First name is required
+        </label>
+      </div>
+      <div>
+        <input type="text" name="lastname" formControlName="lastName" placeholder="last name">
+        <label *ngIf="signupForm.controls['lastName'].hasError('required') && (signupForm.controls['lastName'].touched)">Last name is
+          required
+        </label>
+      </div>
+      <div>
+        <input type="text" name="email" formControlName="email" placeholder="email">
+        <label *ngIf="signupForm.controls['email'].hasError('required') && (signupForm.controls['email'].touched)">Email is required
+        </label>
+        <label *ngIf="signupForm.controls['email'].hasError('email') && (signupForm.controls['email'].touched)">A valid email is
+          required
+        </label>
+      </div>
+      <div>
+        <input type="text" name="username" formControlName="username" placeholder="user name">
+        <label *ngIf="signupForm.controls['username'].hasError('required') && (signupForm.controls['username'].touched)">User name is
+          required
+        </label>
+        <label *ngIf="signupForm.controls['username'].hasError('nameTaken')">This name is already being used
+        </label>
+      </div>
+      <div>
+        <input type="password" name="password" placeholder="password" formControlName="password"/>
+        <label *ngIf="signupForm.controls['password'].hasError('required') && (signupForm.controls['password'].touched)">Password
+          is required
+        </label>
+      </div>
+      <button type="submit" [disabled]="signupForm.invalid">signUp</button>
+    </div>
+  </form>
+</div>
