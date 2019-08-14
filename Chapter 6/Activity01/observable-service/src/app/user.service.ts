@@ -8,7 +8,7 @@ export class UserService {
 
   constructor() { }
 
-  User(newUser) {
+  setUserLogin(newUser) {
     this.user.next(newUser);
   }
 }
