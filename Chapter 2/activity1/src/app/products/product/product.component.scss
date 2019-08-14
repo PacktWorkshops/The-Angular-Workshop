@@ -1,0 +1,30 @@
+.product-card {
+  box-shadow: 0 2px 8px 0 rgba(200, 200, 200, 0.5);
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  align-items: center;
+  position: relative;
+
+  & > .name {
+    font-size: 24px;
+  }
+
+  .info {
+    margin-bottom: 10px;
+  }
+
+  &.special-offer::before{
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background-color: #ff9f45;
+    padding: 5px;
+    border-radius: 20px;
+    right: 0;
+    top: 0;
+    margin: 20px;
+  }
+
+}

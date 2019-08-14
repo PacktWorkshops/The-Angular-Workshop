@@ -1,0 +1,11 @@
+<ul class="stations-line">
+  <li
+  class="station"
+  *ngFor="let station of stations"
+  (click)='onClick(station)'
+  [style.width.px]='station.size'
+  [ngClass]="station.color"
+  >
+    <span class="name">{{ station.name }}</span>
+  </li>
+</ul>

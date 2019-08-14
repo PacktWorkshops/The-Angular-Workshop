@@ -1,0 +1,6 @@
+<div class='product-card' appSpecialOffer [special]='product.specialOffer' (click)='clickProduct()'>
+  <span class='name info'>{{ product.name }}</span>
+  <span class='category info'>{{ product.category | productCategory }}</span>
+  <span class='price info'>{{ product.price | currency }}</span>
+  <app-button label='select product'></app-button>
+</div>

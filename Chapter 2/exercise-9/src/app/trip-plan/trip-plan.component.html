@@ -1,0 +1,4 @@
+<h1 class="title">Plan a trip at {{ hour | date: 'shortTime' }}</h1>
+
+<app-stations [stations]='stations' (stationSelected)='onSelectStation($event)'></app-stations>
+

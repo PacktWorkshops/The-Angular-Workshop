@@ -1,0 +1,49 @@
+.stations-line {
+  list-style: none;
+  display: flex;
+}
+
+.station::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 8px solid #000;
+  display: inline-block;
+}
+
+.station {
+  position: relative;
+}
+
+.station::after {
+  display: inline-block;
+  content: "";
+  border-bottom: 36px solid #fff;
+  width: 100%;
+  position: absolute;
+  left: 18px;
+  z-index: -1;
+  margin-top: 3px;
+}
+
+.station:last-child::after {
+  display: none;
+}
+
+.station > .name {
+  position: absolute;
+  transform: rotate(-45deg);
+  top: -56px;
+  left: 20px;
+  width: 120px;
+}
+
+.station.blue::after  {
+  border-color: #0996d7;
+}
+
+.station.green::after  {
+  border-color: #00b151;
+}
