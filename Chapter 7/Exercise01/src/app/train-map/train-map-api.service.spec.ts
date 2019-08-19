@@ -1,12 +1,25 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, getTestBed, async } from '@angular/core/testing';
 
 import { TrainMapApiService } from './train-map-api.service';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe('TrainMapApiService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let service: TrainMapApiService;
+  let injector: TestBed;
+  let httpMock: HttpTestingController;
+  beforeEach(async(() => TestBed.configureTestingModule({
+    imports: [
+      HttpClientTestingModule
+    ],
+  })));
+  beforeEach(() => {
+    service = TestBed.get(TrainMapApiService);
+    injector = getTestBed();
+    httpMock = injector.get(HttpTestingController);
+  });
 
   it('should be created', () => {
-    const service: TrainMapApiService = TestBed.get(TrainMapApiService);
     expect(service).toBeTruthy();
   });
+
 });
