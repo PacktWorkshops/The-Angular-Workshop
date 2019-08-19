@@ -4,7 +4,7 @@ import { TrainMapApiService, BASE_API_PATH } from './train-map-api.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ITrainMap } from './train-map.interface';
 
-export const MAPS = [
+export const MAPS: ITrainMap[] = [
   {
     name: 'Blue',
     id: '0',
