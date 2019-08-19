@@ -22,12 +22,12 @@ export class AppContentComponent implements OnInit {
 
   login() {
     this.isLoggedIn = true;
-    this.usersService.User(this.isLoggedIn);
+    this.usersService.setUserLogin(this.isLoggedIn);
   }
 
   logout() {
     this.isLoggedIn = false;
-    this.usersService.User(this.isLoggedIn);
+    this.usersService.setUserLogin(this.isLoggedIn);
   }
 
 }

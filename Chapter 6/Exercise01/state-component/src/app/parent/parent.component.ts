@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
 
   receivedChildMessage: string;
-  messageToSendP: any = '';
+  messageToSendP: string = '';
 
   constructor() { }
 

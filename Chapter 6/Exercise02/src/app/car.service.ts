@@ -32,12 +32,12 @@ export class CarService {
   constructor() { }
 
   public getCars(): any {
-    const carssObservable = new Observable(observer => {
+    const carsObservable = new Observable(observer => {
            setTimeout(() => {
                observer.next(this.cars);
            }, 1000);
     });
 
-    return carssObservable;
+    return carsObservable;
 }
 }
