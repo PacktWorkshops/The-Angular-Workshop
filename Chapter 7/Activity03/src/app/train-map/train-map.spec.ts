@@ -1,10 +1,10 @@
-import { TestBed, tick, fakeAsync, getTestBed, flushMicrotasks, flush } from '@angular/core/testing';
+import { TestBed, fakeAsync, getTestBed, flushMicrotasks } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TrainMap } from './train-map';
 import { TrainMapApiService } from './train-map-api.service';
 import { MAPS } from './train-map-api.service.spec';
 import { TrainMapStore, TrainMapState, TrainMapActions } from './train-map.store';
-import { ITrainMap } from './train-map.interface';
+
 
 describe('TrainMap', () => {
   let injector: TestBed;
